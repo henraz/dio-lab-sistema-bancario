@@ -1,4 +1,4 @@
-mensagem_input = """\n#### Sistema Bancário ####
+mensagem_input = f"""\n{' Sistema Bancário ':-^60}
 Opções disponíveis:
 
 [1] - Depósito
@@ -26,41 +26,51 @@ while True:
         if deposito > 0:
             saldo += deposito
             extrato = extrato + "\n" + "R$ +" + str(deposito)
+            msg = f"Depósito realizado com sucesso: R$ {deposito:.2f}"
+            print(f"\n{msg:^60}")
         else:
-            print("Deve-se depositar um valor maior que zero.")
+            print(f"\n{'Deve-se depositar um valor maior que zero.':^60}")
 
     if operacao == 2:
         
         print("\nOpção selecionada: [2] - Saque.")
 
         if quantidade_saque == 3:
-            print("Não é possível realzar o saque. Limite de saques diários: 3.")
+            print(f"\n{'Não é possível realzar o saque. Limite de saques diários: 3':^60}.")
         else:    
             saque = float(input("Digite a quantidade desejada para saque: "))
         
             if saque > 500:
-                print("\nNão é possível realizar o saque. Valor máximo diário permitido: R$ 500,00.")
+                print(f"\n{'Não é possível realizar o saque. Valor máximo diário permitido: R$ 500,00.':^60}")
             elif saque > saldo:
-                print(f"\nNão há saldo o suficiente. Saldo atual: {saldo}.")
+                msg = f"Não há saldo o suficiente. Saldo atual: R$ {saldo:.2f}."
+                print(f"\n{msg:^60}")
+            elif saque < 0:
+                print(f"\n{'Deve-se digitar um valor maior que zero.':^60}")
             else:
                 saldo -= saque
                 quantidade_saque += 1
                 extrato = extrato + "\n" + "R$ -" + str(saque)
+                msg = f"Saque realizado com sucesso: R$ {saque:.2f}"
+                print(f"\n{msg:^60}")
 
     if operacao == 3:
         print("\nOpção selecionada: [3] - Extrato.")
-        print("\n#### Extrato ####")
+        print(f"\n{' Extrato Bancário ':#^60}") 
         if extrato == "":
-            print("\n--- Não foram realizadas movimentações. ---")
+            print(f"\n{'Não foram realizadas movimentações.':^60}")
         else:
             print(extrato)
-            print(f"Saldo atual da conta: R$ {saldo}")
+            print(f"Saldo atual da conta: R$ {saldo:.2f}")
+        print("")
+        print(60*"#")
 
     if operacao == 4:
         print("\nOpção selecionada: [4] - Sair.")
         print("Saindo ...")
         break
 
+    print(60*"-")
 
     
 
