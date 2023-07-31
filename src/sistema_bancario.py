@@ -17,7 +17,7 @@ while True:
     operacao = int(input(mensagem_input))
 
     if operacao > 4 or operacao < 1:
-        print("Operação inválida!")
+        print(f"\n{'Operação inválida!':^60}")
 
     if operacao == 1:
         print("\nOpção selecionada: [1] - Depósito.")
@@ -36,12 +36,13 @@ while True:
         print("\nOpção selecionada: [2] - Saque.")
 
         if quantidade_saque == 3:
-            print(f"\n{'Não é possível realzar o saque. Limite de saques diários: 3':^60}.")
+            print(f"\n{'Não é possível realzar o saque. Limite de saques diários: 3':^60}")
         else:    
             saque = float(input("Digite a quantidade desejada para saque: "))
         
             if saque > 500:
-                print(f"\n{'Não é possível realizar o saque. Valor máximo diário permitido: R$ 500,00.':^60}")
+                print(f"\n{'Não é possível realizar o saque.':^60}")
+                print(f"\n{'Valor máximo diário permitido: R$ 500,00.':^60}")
             elif saque > saldo:
                 msg = f"Não há saldo o suficiente. Saldo atual: R$ {saldo:.2f}."
                 print(f"\n{msg:^60}")
@@ -71,8 +72,3 @@ while True:
         break
 
     print(60*"-")
-
-    
-
-    
-
