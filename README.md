@@ -1,8 +1,8 @@
 # dio-lab-sistema-bancario
 
-Resolução do lab "Criando um Sistema Bancário com Python", do Bootcamp "Potência Tech powered by iFood | Ciência de Dados" da [dio](https://www.dio.me/bootcamp/potencia-tech-powered-ifood-ciencias-de-dados-com-python).
+Resolução do lab "Criando um Sistema Bancário com Python", do Bootcamp **"Potência Tech powered by iFood | Ciência de Dados"** da [dio](https://www.dio.me/bootcamp/potencia-tech-powered-ifood-ciencias-de-dados-com-python).
 
-Desafio: Deve-se criar um sistema bancário com as seguintes características
+**Desafio:** Deve-se criar um sistema bancário com as seguintes características:
 
 1. Possui apenas 3 operações: Depósito, Saque e Extrato.
 2. Apenas deve-se depositar valores positivos.
