@@ -1,10 +1,10 @@
 mensagem_input = f"""\n{' Sistema Bancário ':-^60}
 Opções disponíveis:
 
-[1] - Depósito
-[2] - Saque
-[3] - Extrato
-[4] - Sair
+[D] - Depósito
+[S] - Saque
+[E] - Extrato
+[Q] - Sair
 
 Qual operação deseja realizar? """
 
@@ -14,13 +14,13 @@ extrato = ""
 
 while True:
 
-    operacao = int(input(mensagem_input))
+    operacao = input(mensagem_input).upper()
 
-    if operacao > 4 or operacao < 1:
+    if operacao not in 'DSEQ':
         print(f"\n{'Operação inválida!':^60}")
 
-    if operacao == 1:
-        print("\nOpção selecionada: [1] - Depósito.")
+    if operacao == 'D':
+        print("\nOpção selecionada: [D] - Depósito.")
         deposito = float(input("Digite a quantidade desejada para depósito: "))
 
         if deposito > 0:
@@ -31,9 +31,9 @@ while True:
         else:
             print(f"\n{'Deve-se depositar um valor maior que zero.':^60}")
 
-    if operacao == 2:
+    if operacao == 'S':
         
-        print("\nOpção selecionada: [2] - Saque.")
+        print("\nOpção selecionada: [S] - Saque.")
 
         if quantidade_saque == 3:
             print(f"\n{'Não é possível realzar o saque. Limite de saques diários: 3':^60}")
@@ -55,8 +55,8 @@ while True:
                 msg = f"Saque realizado com sucesso: R$ {saque:.2f}"
                 print(f"\n{msg:^60}")
 
-    if operacao == 3:
-        print("\nOpção selecionada: [3] - Extrato.")
+    if operacao == 'E':
+        print("\nOpção selecionada: [E] - Extrato.")
         print(f"\n{' Extrato Bancário ':#^60}") 
         if extrato == "":
             print(f"\n{'Não foram realizadas movimentações.':^60}")
@@ -66,8 +66,8 @@ while True:
         print("")
         print(60*"#")
 
-    if operacao == 4:
-        print("\nOpção selecionada: [4] - Sair.")
+    if operacao == 'Q':
+        print("\nOpção selecionada: [Q] - Sair.")
         print("Saindo ...")
         break
 
